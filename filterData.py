@@ -6,6 +6,7 @@ for characterKeys in resultsDict:
     characterDict[characterKeys] = copy.deepcopy(resultsDict)
 with open('Sets.tsv', newline='') as setsTsv:
     setsReader = csv.reader(setsTsv, delimiter='\t')
+    next(setsReader)#Skip Header
     with open('dataSheet.tsv',"w", newline='') as dataTsv:
         dataWriter = csv.writer(dataTsv, delimiter='\t')
         for row in setsReader:
